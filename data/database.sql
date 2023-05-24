@@ -8,8 +8,8 @@ use solid;
 
 create table people (
     pk_people int not null auto_increment primary key,
-    People_name varchar(255) not null,
-    email varchar(255) not null,
+    user_name varchar(255) not null,
+    email varchar(255) not null unique key,
     age int,
     sex enum('M','F'),
     password varchar(12) not null

@@ -2,35 +2,32 @@
 
 require_once ("autoload.php");
 
-$People = new People("josé antonio", "joseantonio@gmail.com", "17", "M", "12345678");
-
-$People1 = new People("antonio", "antonio@gmail.com", 18, "M", "12345678");
-
 echo "<pre>";
-//var_dump($People);
 
-$repository = new PeopleRepository();
+$employeesMam = new People("jorge","test@test.com", 18, "M",  "12345678");
 
-//$repository->save($People1);
+$testMam = new People("test","test2@test.com", 19, "M",  "12345678");
 
-//$People01 = $repository->getByEmail("joseantonio@gmail.com");
+$peopleReposytory = new PeopleRepository();
 
-//var_dump($People);
+//$peopleReposytory->save($employeesMam);
 
-$employee = new Employees($People, "Dev", 4540); 
+//$peopleReposytory->save($testMam);
 
-$employeeRepository = new EmployeesRepository();
+$employees = new Employees($employeesMam, "web developer", 4864.62);
 
-//$employeeRepository->save($People,$employee);
+$testwork = new Employees($testMam, "tester", 2654.62);
 
-//$People->setUserName("Carlin");
+$employeesReposytory = new EmployeesRepository();
 
-//$repository->update($People);
+//$employeesReposytory->save($testMam, $testwork);
 
-var_dump($People1);
+//$employeesReposytory->update($employeesMam, $employees);
 
-$repository->delete($People1);
+//$employeesReposytory->delete($testwork);
 
+// $testwork->setOffice("test department");
 
+// $employeesReposytory->update($testwork);
 
 ?>

@@ -1,14 +1,14 @@
 <?php
 
-    class people {
-        private $Peoplename;
+    class People {
+        private $userName;
         private $email;
         private $age;
         private $sex;
         private $password;
 
-    public function __construct($Peoplename, $email, $age, $sex, $password) {
-        $this->setUserName($Peoplename);
+    public function __construct($userName, $email, $age, $sex, $password) {
+        $this->setUserName($userName);
         $this->setEmail($email);
         $this->setAge($age);
         $this->setSex($sex);
@@ -16,11 +16,11 @@
     }
 
 	public function getUserName() {
-		return $this->Peoplename;
+		return $this->userName;
 	}
 	
-	public function setUserName($Peoplename): self {
-		$this->Peoplename = $Peoplename;
+	public function setUserName($userName): self {
+		$this->userName = $userName;
 		return $this;
 	}
 	

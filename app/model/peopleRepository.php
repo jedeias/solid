@@ -81,8 +81,6 @@ class PeopleRepository implements PeopleRepositoryInterface{
         try {
             $stmt = $this->db->getConect()->prepare($query);
             $stmt->bindValue(':pk_people', $this->getIdByEmail($People->getEmail()));
-    
-            var_dump(($this->getIdByEmail($People->getEmail())));
 
             $stmt->execute();
             echo "Pessoa deletada com sucesso!";
