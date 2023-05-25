@@ -31,9 +31,6 @@ if($user == null) {
 <div class="container">
 
 <div class="sidebar">
-    <?php
-        //var_dump($_SESSION["user"]);
-    ?>
 
   <ul class="menu">
     <li><a href="#people">People</a></li>

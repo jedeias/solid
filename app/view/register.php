@@ -29,12 +29,18 @@ require_once ("../autoload.php");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/list.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">     
 
     <title>Register User</title>
 
     <style>
-        .container {
+        .containerRegister {
+            justify-content: end;
+            display: flex !important;
             margin-top: 5vh;
             border: 1px solid black;
             border-radius: 8px;
@@ -43,6 +49,7 @@ require_once ("../autoload.php");
         .btn-primary{
             margin-top: 5%;
         }
+        
 
     </style>
 
@@ -50,8 +57,23 @@ require_once ("../autoload.php");
 <body>
 
 
-<div class="container">
-    <form action="" method="post">
+<div class="containerRegister">
+
+
+<div class="sidebar">
+
+  <ul class="menu">
+    <li><a href="#people">People</a></li>
+    <li><a href="#Clients">Clients</a></li>
+    <li><a href="#Employees">Employees</a></li>
+    <li><a href="register.php">Register</a></li>
+    <li><a href="exit.php">Logout</a></li>
+
+  </ul>
+</div>
+
+
+    <form action="" method="post" class="register">
     <div class="form-row">
         <div class="form-group col-md-6">
         <label for="inputEmail4">Email</label>
@@ -83,5 +105,6 @@ require_once ("../autoload.php");
     <button type="submit" class="btn btn-primary" >Sign in</button>
     </form>
 </div>
+
 </body>
 </html>
