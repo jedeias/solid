@@ -1,11 +1,11 @@
 <?php
 
 final class Employees{
-    private object $People;
-    private $office;
-    private $wage;
+    private People $People;
+    private string $office;
+    private float $wage;
 
-    public function __construct(object $People, $office, $wage) {
+    public function __construct(People $People, $office, $wage) {
         $this->setPeople($People);
         $this->setOffice($office);
         $this->setWage($wage);

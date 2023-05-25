@@ -7,19 +7,19 @@ abstract class Host{
     private $name = "root";
     private $password = "";
 
-	protected function getHost() {
+	protected final function getHost() {
 		return $this->host;
 	}	
 	
-	protected function getDatabase() {
+	protected final function getDatabase() {
 		return $this->database;
 	}
 	
-	protected function getName() {
+	protected final function getName() {
 		return $this->name;
     }
 	
-	protected function getPassword() {
+	protected final function getPassword() {
 		return $this->password;
 	}
 }
