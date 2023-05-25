@@ -104,6 +104,19 @@ class PeopleRepository implements PeopleRepositoryInterface{
         return(int) $People["pk_people"];
     }
 
+    public function getAllPeople(){
+        
+        $query = $this->db->getConect()->prepare("SELECT * FROM people");
+        $query->execute();
+
+        $People = $query->fetchAll(PDO::FETCH_ASSOC);
+
+        if (!$People) {
+            throw new Exception("Usuário não encontrado");
+        }
+
+        return $People;
+    }
 }
 
 ?>

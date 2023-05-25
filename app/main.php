@@ -20,16 +20,16 @@ echo "<pre>";
 
 //$clientsRepository->save($client);
 
-//$preson = new People(null, $_POST["email"], null, null, $_POST["password"]);
+$preson = new People(null, $_POST["email"], null, null, $_POST["password"]);
 
-//$login = new login();
+$login = new login();
 
-//$login->loginCheack($preson);
+$login->loginCheack($preson);
 
-$selectClient = new InnerJoinsEmployees();
+// $selectClient = new InnerJoinsEmployees();
 
-$arrayClints = $selectClient->innerJoin();
+// $arrayClints = $selectClient->innerJoin();
 
-var_dump($arrayClints);
+// var_dump($arrayClints);
 
 ?>

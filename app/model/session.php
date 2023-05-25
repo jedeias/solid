@@ -1,13 +1,23 @@
 <?php
 
 class Session implements sessionInterface{
-    public function set($session, $var){
-        $_SESSION[$session] = $var;
+    function __construct() {
+        
+        session_start();
     }
-    public function get($var){
-        return $_SESSION[$var];
+   
+    function set($sessionName, $var) {
+        $_SESSION[$sessionName] = $var;
     }
-    public function destroy(){
+
+    function get($name) {
+        if (isset($_SESSION[$name])) {
+            return $_SESSION[$name];
+        }
+        return null;
+    }
+   
+    function destroy() {
         session_destroy();
     }
 }
