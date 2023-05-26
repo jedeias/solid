@@ -18,6 +18,12 @@ require_once ("../autoload.php");
 
         $peopleRepository->save($person);
 
+        $employee = new Employees($person, $_POST['office'], $_POST['salary']);
+
+        $employeesRepository = new EmployeesRepository();
+
+        $employeesRepository->save($employee);
+
     }
 
 ?>
@@ -35,15 +41,17 @@ require_once ("../autoload.php");
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">     
 
-    <title>Register User</title>
+    <title>registerEmployees User</title>
 
     <style>
-        .containerRegister {
-            justify-content: end;
+        .containerregisterEmployees {
             display: flex !important;
             margin-top: 5vh;
+            margin-left: 25%;
             border: 1px solid black;
             border-radius: 8px;
+            width: 40%;
+            justify-content:center ;
         }
 
         .btn-primary{
@@ -57,23 +65,25 @@ require_once ("../autoload.php");
 <body>
 
 
-<div class="containerRegister">
+<div class="containerregisterEmployees">
 
 
 <div class="sidebar">
 
-  <ul class="menu">
-    <li><a href="#people">People</a></li>
-    <li><a href="#Clients">Clients</a></li>
-    <li><a href="#Employees">Employees</a></li>
-    <li><a href="register.php">Register</a></li>
+<ul class="menu">
+    <li><a href="list.php#people">People</a></li>
+    <li><a href="list.php#Clients">Clients</a></li>
+    <li><a href="list.php#Employees">Employees</a></li>
+    <li><a href="registerEmployees.php">register employees</a></li>
+    <li><a href="registerClients.php">register clients</a></li>
     <li><a href="exit.php">Logout</a></li>
 
-  </ul>
+</ul>
+
 </div>
 
 
-    <form action="" method="post" class="register">
+    <form action="" method="post" class="registerEmployees">
     <div class="form-row">
         <div class="form-group col-md-6">
         <label for="inputEmail4">Email</label>
@@ -102,7 +112,16 @@ require_once ("../autoload.php");
 
     </div>
 
-    <button type="submit" class="btn btn-primary" >Sign in</button>
+    <div class="form-group">
+        <label for="inputAddress">Salary</label>
+        <input type="text" name="salary" class="form-control" id="inputAddress">
+    </div>
+    <div class="form-group">
+        <label for="inputAddress2">office</label>
+        <input type="text" name='office' class="form-control" id="inputAddress2">
+    </div>
+
+    <button type="submit" class="btn btn-primary" >Register</button>
     </form>
 </div>
 

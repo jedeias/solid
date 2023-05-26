@@ -83,7 +83,7 @@ class PeopleRepository implements PeopleRepositoryInterface{
             $stmt->bindValue(':pk_people', $this->getIdByEmail($People->getEmail()));
 
             $stmt->execute();
-            echo "Pessoa deletada com sucesso!";
+
         } catch(PDOException $e) {
             echo "Erro ao deletar a pessoa: " . $e->getMessage();
         }

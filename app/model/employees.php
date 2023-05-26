@@ -2,8 +2,8 @@
 
 final class Employees{
     private People $People;
-    private string $office;
-    private float $wage;
+    private $office;
+    private $wage;
 
     public function __construct(People $People, $office, $wage) {
         $this->setPeople($People);

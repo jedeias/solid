@@ -1,7 +1,7 @@
 <?php
 
 interface InnerJoinsGetPoepleInterface extends InnerJoinsInterface{
-    public function InnerJoinSelect(People $people);
+    public function InnerJoinSelect($pk);
 }
 
 ?>

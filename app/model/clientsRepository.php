@@ -47,15 +47,13 @@ class ClientsRepository implements clientsRepositoryInterface{
     public function delete(Clients $clients){
         $query = "DELETE FROM clients WHERE fk_people = :people";
 
-        try{
-
+        try {
             $stmt = $this->db->getConect()->prepare($query);
             $stmt->bindValue(':people', $this->peopleRepository->getIdByEmail($clients->getPeople()->getEmail()));
 
             $stmt->execute();
-
-        }catch(PDOException $e){
-            echo "Erro ao deletar employee: " . $e->getMessage();
+        } catch (PDOException $e) {
+            echo "Error deleting client: " . $e->getMessage();
         }
     }
 

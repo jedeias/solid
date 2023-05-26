@@ -8,40 +8,41 @@ class InnerJoinsEmployees extends InnerJoins implements InnerJoinsGetPoepleInter
         $this->db = new Conect();
     }
 
-    public function innerJoin(){
-
+    public function innerJoin()
+    {
         $query = "SELECT * FROM employees
-        INNER JOIN people ON (employees.fk_people = people.pk_people)";
-
+                  INNER JOIN people ON (employees.fk_people = people.pk_people)";
+    
         try {
             $stmt = $this->db->getConect()->prepare($query);
             $stmt->execute();
-
+    
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
+    
             return $result;
-
-        } catch(PDOException $e) {
-            
-            echo "Erro to select: " . $e->getMessage();
-        
+    
+        } catch (PDOException $e) {
+            echo "Error selecting data: " . $e->getMessage();
         }
-
     }
 
-    public function innerJoinSelect(People $people){
-
+    public function innerJoinSelect($pk)
+    {
         $query = "SELECT * FROM employees
-        INNER JOIN people ON (employees.fk_people = people.pk_people WHERE email = :email)";
-
+                  INNER JOIN people ON (employees.fk_people = people.pk_people) WHERE pk_employee = :pk_employee";
+    
         try {
             $stmt = $this->db->getConect()->prepare($query);
-
-            $stmt->bindValue(':email', $people->getEmail());            
+    
+            $stmt->bindValue(':pk_employee', $pk);            
             $stmt->execute();
-
+    
+            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    
+            return $result[0];
+    
         } catch(PDOException $e) {
-            echo "Erro to select: " . $e->getMessage();
+            echo "Error selecting data: " . $e->getMessage();
         }
     }
 

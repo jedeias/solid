@@ -33,10 +33,11 @@ if($user == null) {
 <div class="sidebar">
 
   <ul class="menu">
-    <li><a href="#people">People</a></li>
-    <li><a href="#Clients">Clients</a></li>
-    <li><a href="#Employees">Employees</a></li>
-    <li><a href="register.php">Register</a></li>
+    <li><a href="list.php#people">People</a></li>
+    <li><a href="list.php#Clients">Clients</a></li>
+    <li><a href="list.php#Employees">Employees</a></li>
+    <li><a href="registerEmployees.php">register employees</a></li>
+    <li><a href="registerClients.php">register clients</a></li>
     <li><a href="exit.php">Logout</a></li>
 
   </ul>
@@ -54,7 +55,7 @@ if($user == null) {
         <th scope='col'>Sex</th>
         <th scope='col'>Password</th>
         <th scope='col'>Update</th>
-    </tr>
+      </tr>
     </thead>
     <tbody>
 <?php
@@ -72,7 +73,7 @@ if($user == null) {
         <td>{$person['email']}</td>
         <td>{$person['sex']}</td>
         <td>{$person['password']}</td>
-        <td> <button> Update </button> </td> 
+        <td> <a href='updatePeople.php?id={$person['pk_people']}'> <button> Update </button> </td> 
         </tr>";
     }
 ?>
@@ -97,6 +98,7 @@ if($user == null) {
         <th scope='col'>Sex</th>
         <th scope='col'>Password</th>
         <th scope='col'>Update</th>
+        <th scope='col'>Delete</th>
       </tr>
     </thead>
     <tbody>
@@ -119,7 +121,8 @@ if($user == null) {
             <td>{$clients['email']}</td>
             <td>{$clients['sex']}</td>
             <td>{$clients['password']}</td>
-            <td> <button> Update </button> </td> 
+            <td> <a href='updateClients.php?id={$clients['pk_client']}'> <button> Update </button> </td> 
+            <td> <a href='deleteClients.php?id={$clients['email']}'> <button> Delete </button> </td> 
             </tr>";
         }
     ?>
@@ -141,6 +144,7 @@ if($user == null) {
         <th scope='col'>Sex</th>
         <th scope='col'>Password</th>
         <th scope='col'>Update</th>
+                <th scope='col'>Delete</th>
       </tr>
     </thead>
     <tbody>
@@ -163,7 +167,8 @@ if($user == null) {
             <td>{$employees['email']}</td>
             <td>{$employees['sex']}</td>
             <td>{$employees['password']}</td>
-            <td> <button> Update </button> </td> 
+            <td> <a href='updateEmployees.php?id={$employees['pk_employee']}'> <button> Update </button> </td>
+            <td> <a href='deleteEmployees.php?id={$employees['email']}'> <button> Delete </button> </td>  
             </tr>";
         }
     ?>

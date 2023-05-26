@@ -30,3 +30,14 @@ create table clients(
     value_cost float not null,
     foreign key (fk_people) references people(pk_people)
 )CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+
+INSERT INTO people 
+values	(default, 'test', 'test@test.com', 18, 'M', '12345678'),
+		(default, 'josi', 'josi@test.com', 23, 'M', '12345678')
+;
+
+insert into clients 
+values (default, 1, "e-comerce online", 3435.54);
+
+insert into employees 
+values (default, 2, "architetury developer", 9435.54);
