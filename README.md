@@ -34,6 +34,13 @@ The project follows the Model-View-Controller (MVC) architecture, which separate
 - **View**: Handles the user interface and presentation.
 - **Controller**: Manages the interaction between the Model and the View, processing user requests and updating the Model or View accordingly.
 
+## Quick Clone
+
+To quickly clone this project, you can use the following command:
+
+```bash
+git clone https://github.com/jedeias/solid.git
+
 ## Getting Started
 
 To get started with this project, follow these steps:
