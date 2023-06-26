@@ -40,7 +40,7 @@ To quickly clone this project, you can use the following command:
 
 ```bash
 git clone https://github.com/jedeias/solid.git
-
+```
 ## Getting Started
 
 To get started with this project, follow these steps:
